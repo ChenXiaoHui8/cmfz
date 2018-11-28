@@ -1,6 +1,6 @@
-package com.baizhi.adminservice.impl;
+package com.baizhi.service.impl;
 
-import com.baizhi.adminservice.AdminService;
+import com.baizhi.service.AdminService;
 import com.baizhi.dao.AdminDao;
 import com.baizhi.entity.Admin;
 import org.springframework.beans.factory.annotation.Autowired;

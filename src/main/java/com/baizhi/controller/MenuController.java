@@ -1,6 +1,6 @@
 package com.baizhi.controller;
 
-import com.baizhi.adminservice.MenuService;
+import com.baizhi.service.MenuService;
 import com.baizhi.entity.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

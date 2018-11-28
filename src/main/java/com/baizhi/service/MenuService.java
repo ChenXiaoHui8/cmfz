@@ -1,4 +1,4 @@
-package com.baizhi.adminservice;
+package com.baizhi.service;
 
 import com.baizhi.entity.Menu;
 

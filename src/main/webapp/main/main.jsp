@@ -9,6 +9,10 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
+
+    <script type="text/javascript" src="../js/datagrid-detailview.js"></script>
+    <script type="text/javascript" src="../js/jquery.edatagrid.js"></script>
+
     <script type="text/javascript">
         $(function () {
             $.ajax({
@@ -20,7 +24,9 @@
                         var title = '';
 
                         for (var j = 0; j < data[i].menuList.length; j++) {
-                            title += data[i].menuList[j].title + "</br>";
+                            /* title += data[i].menuList[j].title + "</br>";*/
+
+                            title += "<p style='text-align: center'><a id=\"btn\" href=\"#\" class='easyui-linkbutton' onclick=\"addTabs('" + data[i].menuList[j].title + "','" + data[i].menuList[j].url + "','" + data[i].menuList[j].iconCls + "')\" data-options='iconCls:'icon-search'/>" + data[i].menuList[j].title + "</a></p>";
                         }
 
                         $('#aa').accordion('add', {
@@ -32,26 +38,31 @@
                     }
 
 
-                    /*alert(data.length)
-                    $.each(data,function(i,n){
-                        $('#aa').accordion('add',{
-                            title: data[i].title,
-                            selected: false,
-                            content:title,
-                        });
-                    });*/
+
                 }
             });
 
-            /*$('#aa').accordion({
-                onSelect: function(title,index){
-                    $("ul[name='"+title+"']").tree({
-                        url: 'menu/getModules?menuName='+title,
-                    });
 
-                }
-            });*/
         });
+
+        function addTabs(title, url, iconCls) {
+            var flag = $("#tt").tabs("exists", title);
+            if (flag) {
+                $("#tt").tabs("select", title);
+            } else {
+                /*添加选项卡*/
+                $('#tt').tabs('add', {
+                    title: title,
+                    selected: true,
+                    href: "${pageContext.request.contextPath}" + url,
+                    iconCls: iconCls,
+                    closable: true
+                });
+            }
+
+
+        }
+
 
 
     </script>
@@ -77,8 +88,10 @@
 </div>
 <div data-options="region:'center'">
     <div id="tt" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">
-        <div title="主页" data-options="iconCls:'icon-neighbourhood',"
-             style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;"></div>
+
+        <%-- <div title="主页" data-options="iconCls:'icon-neighbourhood',"
+              style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;">
+         </div>--%>
     </div>
 </div>
 </body>

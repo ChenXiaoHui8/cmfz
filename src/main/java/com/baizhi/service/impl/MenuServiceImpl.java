@@ -1,6 +1,6 @@
-package com.baizhi.adminservice.impl;
+package com.baizhi.service.impl;
 
-import com.baizhi.adminservice.MenuService;
+import com.baizhi.service.MenuService;
 import com.baizhi.dao.MenuDao;
 import com.baizhi.entity.Menu;
 import org.springframework.beans.factory.annotation.Autowired;

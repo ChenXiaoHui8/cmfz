@@ -1,6 +1,6 @@
 package com.baizhi.controller;
 
-import com.baizhi.adminservice.AdminService;
+import com.baizhi.service.AdminService;
 import com.baizhi.entity.Admin;
 import com.google.code.kaptcha.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
