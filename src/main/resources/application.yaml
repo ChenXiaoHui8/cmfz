@@ -1,0 +1,20 @@
+server:
+  context-path: /cmfz
+  port: 8989
+  jsp:
+    init-parameters:
+      development: true
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cmfz
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /
+mybatis:
+  mapper-locations:  classpath*:mapper/*Mapper.xml
