@@ -24,9 +24,8 @@
                         var title = '';
 
                         for (var j = 0; j < data[i].menuList.length; j++) {
-                            /* title += data[i].menuList[j].title + "</br>";*/
 
-                            title += "<p style='text-align: center'><a id=\"btn\" href=\"#\" class='easyui-linkbutton' onclick=\"addTabs('" + data[i].menuList[j].title + "','" + data[i].menuList[j].url + "','" + data[i].menuList[j].iconCls + "')\" data-options='iconCls:'icon-search'/>" + data[i].menuList[j].title + "</a></p>";
+                            title += "<p style='text-align: center'><a id=\"btn\" href=\"#\" class='easyui-linkbutton' onclick=\"addTabs('" + data[i].menuList[j].title + "','" + data[i].menuList[j].url + "','" + data[i].menuList[j].iconCls + "')\" data-options=\"iconCls:'icon-search'\">" + data[i].menuList[j].title + "</a></p>";
                         }
 
                         $('#aa').accordion('add', {
@@ -54,7 +53,7 @@
                 $('#tt').tabs('add', {
                     title: title,
                     selected: true,
-                    href: "${pageContext.request.contextPath}" + url,
+                    href: "${pageContext.request.contextPath}/images/" + url,
                     iconCls: iconCls,
                     closable: true
                 });
@@ -89,9 +88,9 @@
 <div data-options="region:'center'">
     <div id="tt" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">
 
-        <%-- <div title="主页" data-options="iconCls:'icon-neighbourhood',"
-              style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;">
-         </div>--%>
+        <div title="主页" data-options="iconCls:'icon-neighbourhood',"
+             style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;">
+        </div>
     </div>
 </div>
 </body>
